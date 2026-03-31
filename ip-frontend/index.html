@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is my IP?</title>
+</head>
+<body>
+    <h3>Your IP address is <span id="ip-output"></span></h3>
+
+    <script>
+        const API_URL ="http://127.0.0.1:8080/api/ip";
+        
+        async function getIP()
+        {
+            const resp = await fetch(API_URL);
+            const data = await resp.json();
+
+            console.log(data);
+            document.getElementById("ip-output").textContent = data.ip;
+        }
+        getIP();
+    </script>
+</body>
+</html>
