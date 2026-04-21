@@ -1,25 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>What is my IP?</title>
+    <title>Hotel</title>
 </head>
+
 <body>
-    <h3>Your IP address is <span id="ip-output"></span></h3>
-
-    <script>
-        const API_URL ="http://127.0.0.1:8080/api/ip";
-        
-        async function getIP()
-        {
-            const resp = await fetch(API_URL);
-            const data = await resp.json();
-
-            console.log(data);
-            document.getElementById("ip-output").textContent = data.ip;
-        }
-        getIP();
-    </script>
+    <h3>Welcome to the hotel!</h3>
+    Guests: <select name="guests" id="guest-list"></select><br>
+    <h4>Rooms:</h4>
+    <select name="rooms" id="roomSelector" id="room-list"></select>
+        <input type="date" name="Check In" id="checkIn">
+        <input type="date" name="Check Out" id="checkOut">
+        <input type="text" id="additionalInfo">Additional Info
+        <button id="saveBooking" onclick="bookRoom()">Save Booking</button>
+    </div>
+    <script src="script.js"></script>
 </body>
+
 </html>
